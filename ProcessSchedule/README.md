@@ -111,33 +111,33 @@ flowchart TD
 
 对程序进行运行，其中打开两个终端，均运行 `./nice-exp &`，再打开一个终端，运行 `top` 命令
 
-![](/Users/gamernotitle/Library/Application Support/OneClip/2026-06-05/A9834BCD-8AC7-4CD9-835E-4A9A662B0CE9.png)
+![](./img/A9834BCD-8AC7-4CD9-835E-4A9A662B0CE9.png)
 
-![](/Users/gamernotitle/Library/Application Support/OneClip/2026-06-05/E33F487A-DB2C-40FD-91D5-03A48D102160.png)
+![](./img/E33F487A-DB2C-40FD-91D5-03A48D102160.png)
 
 在 `top` 页面中打开 `Last Used CPU (SMP)` 选项
 
-![](/Users/gamernotitle/Library/Application Support/OneClip/2026-06-05/5617B85C-7FA3-4B78-BCA2-934EE9EF366C.png)
+![](./img/5617B85C-7FA3-4B78-BCA2-934EE9EF366C.png)
 
 可以看到 `nice-exp` 占用了大量 CPU
 
-![](/Users/gamernotitle/Library/Application Support/OneClip/2026-06-05/7A9FA92F-0389-4301-AE15-DE80242352C4.png)
+![](./img/7A9FA92F-0389-4301-AE15-DE80242352C4.png)
 
 尝试将两个同样的进程绑定到同一个核心中，因为虚拟机只分配了 2 核，这里直接全部绑定到第二个核心上面去，运行 `taskset -c 1 ./nice-exp &`
 
-![](/Users/gamernotitle/Library/Application Support/OneClip/2026-06-05/88618335-5768-4EA3-9243-54199733AD9D.png)
+![](./img/88618335-5768-4EA3-9243-54199733AD9D.png)
 
-![](/Users/gamernotitle/Library/Application Support/OneClip/2026-06-05/D9F7F1C7-E49E-4C4F-B34F-224B914F3F7C.png)
+![](./img/D9F7F1C7-E49E-4C4F-B34F-224B914F3F7C.png)
 
 再到另一个终端会话使用 `top` 查看
 
-![](/Users/gamernotitle/Library/Application Support/OneClip/2026-06-05/8D67128C-646F-42CC-894E-66B2A4B37346.png)
+![](./img/8D67128C-646F-42CC-894E-66B2A4B37346.png)
 
 发现两个进程几乎各占用一半的 CPU 核心资源，尝试调整优先级
 
 我们先获取两个 `nice-exp` 的 PID，运行 `pidof nice-exp`，发现分别为 `59250` `59249`
 
-![CleanShot_2026-06-05_17.54.22@2x](/Users/gamernotitle/Library/Application Support/CleanShot/media/media_xEEJHJSoZ0/CleanShot_2026-06-05_17.54.22@2x.png)
+![CleanShot_2026-06-05_17.54.22@2x](./img/CleanShot_2026-06-05_17.54.22@2x.png)
 
 使用 `renice` 调整进程 `59250` 的优先级为 `-5`
 
@@ -147,7 +147,7 @@ $ sudo renice -n -5 -g 59250
 
 再次在 `top` 查看，发现 CPU 占用比约为 3:1
 
-![](/Users/gamernotitle/Library/Application Support/CleanShot/media/media_nZtuFpmFY3/CleanShot_2026-06-05_17.56.09@2x.png)
+![](./img/CleanShot_2026-06-05_17.56.09@2x.png)
 
 ## 结果分析及实验小结
 
