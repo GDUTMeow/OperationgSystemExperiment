@@ -7,6 +7,15 @@
 > [!important]
 >
 > 笔者班级要求做 5 个实验（其中必须包含三个不同分类）即可优秀，所以这里只有我自己做过的
+>
+> 个人使用的电脑系统是 KylinOS v11
+>
+> ![](./img/CleanShot_2026-06-05_18.05.37@2x.png)
+>
+> ```bash
+> $ gamernotitle@LUMINE-KYLINOSVM:~$ uname -a
+> Linux LUMINE-KYLINOSVM 6.6.0-63-generic #63-KYLINOS SMP Sat Feb  7 12:52:44 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+> ```
 
 ## 实验目录
 
