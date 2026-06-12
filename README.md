@@ -22,7 +22,7 @@
 - 实验和课程设计
     - 调度器
         - [基于 Kylin OS 的进程调度与优先级实验](./ProcessSchedule)
-        - 实现 O(1)调度器算法
+        - [实现 O(1) 调度器算法](./ScheduleAlgorithm/)
     - 内存管理
         - 安装 QEMU 软件
         - 页表快照实验
