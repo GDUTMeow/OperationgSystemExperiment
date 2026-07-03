@@ -38,9 +38,13 @@
     - 银河麒麟适配迁移
         - 基于 DEB 格式的国产操作系统适配打包规范
         - 基于 RPM 格式的国产操作系统适配打包规范
-    - 虚拟化技术与应用（本人课设选题）
+    - [虚拟化技术与应用（本人课设选题）](./VirtualizationBalance)
         - 容器化负载均衡部署实践
-        - 电商 web 大并发解耦解决方案
+            - [nginx 负载均衡器](./VirtualizationBalance/container/nginx)
+            - [Tomcat 简单 HTTP 服务](./VirtualizationBalance/container/tomcat)
+        - 电商 web 大并发解耦解决方案（All in Boom 容器）
+            - [All in Boom (LNMP) 容器](./VirtualizationBalance/container/all-in-boom)
+            - [宿主机 Nginx 配置脚本](./VirtualizationBalance/local/nginx)
     - 课程设计要求
 - 附录 银河麒麟高级服务器（工业版）V10 安装与初始化
 

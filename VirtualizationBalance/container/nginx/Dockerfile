@@ -9,4 +9,4 @@ RUN mkdir -p /usr/local/nginx
 RUN cd /usr/src/nginx-1.31.2 && ./configure --prefix=/usr/local/nginx && make && make install
 RUN ln -s /usr/local/nginx/sbin/nginx /usr/local/sbin
 
-CMD ["/bin/bash"]
+CMD ["nginx", "-g", "daemon off;"]
